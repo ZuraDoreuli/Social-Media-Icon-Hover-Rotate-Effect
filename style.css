@@ -1,0 +1,89 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background-image: url(./bg.jpg);
+  object-fit: cover;
+}
+svg {
+  stroke: #404040;
+  transition: all 0.6s ease-in-out;
+}
+.icons {
+  display: flex;
+  gap: 50px;
+}
+.icon {
+  position: relative;
+  width: 110px;
+  height: 110px;
+  cursor: pointer;
+}
+.content {
+  display: grid;
+  place-items: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
+.front {
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  place-items: center;
+  border: 1px solid #404040;
+  border-radius: 50%;
+  background-color: #fff;
+  z-index: 2;
+  transition: all 0.6s ease-in-out;
+}
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #404040;
+  background-color: #e7e7e7;
+  border-radius: 50%;
+  transition: all 0.6s ease-in-out;
+}
+.icon:hover svg {
+  stroke: #fff;
+  transform: scale(0.9);
+}
+.icon:hover .back {
+  border: 1px solid #fff;
+  background-color: transparent;
+  transform: translate(-50%, -50%) rotateY(180deg);
+}
+.icon:hover .front {
+  border: 1px solid #fff;
+  transform: translate(-50%, -50%) rotateX(180deg);
+}
+.whatsapp:hover .front {
+  background-color: #25d366;
+}
+.facebook:hover .front {
+  background-color: #4267b2;
+}
+.youtube:hover .front {
+  background-color: #ff0000;
+}
+.twitter:hover .front {
+  background-color: #1da1f2;
+}
